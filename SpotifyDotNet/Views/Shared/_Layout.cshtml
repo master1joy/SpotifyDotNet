@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - SpotifyDotNet</title>
+    <script src="https://kit.fontawesome.com/7ff45e65d1.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/SpotifyDotNet.styles.css" asp-append-version="true" />
+    <link rel="shortcut icon" href="icons/favicon.png" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index"><img src="icons/logo.png" alt="Spotify" width="50" height="50"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="bottom">
+            <div class="icons">
+                <i class="fa-solid fa-repeat fa-2x "></i>
+                <i class="fa fa-step-backward fa-2x"></i>
+                <i class="fa fa-play-circle fa-3x fa-lg" id="masterplay"></i>
+                <i class="fa fa-step-forward fa-2x"></i>
+                <i class="fa-solid fa-shuffle fa-2x "></i>
+            </div>
+            <div class="musicPlayer">
+                <img src="icons/ConcreteImpeccableIndochinesetiger-max-1mb.gif" id="playing" height="30" width="30">
+                <label name="audioCurrentTime">0:00</label>
+                <input type="range" min="0" value="0" max="100" id="myProgressBar">
+                <label name="audioDuration">0:00</label>
+            </div>
+        </div>
+        <div class="container">
+            &copy; 2025 - SpotifyDotNet - <a asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
