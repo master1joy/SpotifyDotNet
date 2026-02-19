@@ -42,7 +42,7 @@ li {
     justify-content: center;
     align-items: center;
     color: aliceblue;
-    background: url("spotify-banner.jpg");
+    background-color: black;
 }
 
 .song-heading {
@@ -63,7 +63,7 @@ li {
 
 .middle {
     height: 65vh;
-    background: url("spotify-banner.jpg");
+    background: url("/poster/spotify-banner.jpg");
     color: white;
     background-size: 100%;
     background-repeat: no-repeat;
@@ -107,7 +107,9 @@ li {
     justify-content: center;
     align-items: center;
 }
-
+h3 {
+    color: #fff;
+}
 
 
 @media (max-width:800px) {
